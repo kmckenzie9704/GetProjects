@@ -13,7 +13,7 @@ pipeline {
         }
 		  stage('Create Docker Image') {
 		    steps {
-		      sh "docker build --tag=getprojects ."
+		      sh 'docker build --t getprojects .'
 		    }
 		  }
     }
