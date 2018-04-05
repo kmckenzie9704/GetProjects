@@ -13,7 +13,7 @@ pipeline {
         }
 		 stage('Create Docker Image') {
 		   steps {
-		      docker.build("GetProjects", ".")
+		      def app = docker.build("GetProjects", ".")
 		    }
 		}
     }
