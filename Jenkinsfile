@@ -11,10 +11,5 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-		  stage('Create Docker Image') {
-		    steps {
-		      docker.build("TimeManagement")
-		    }
-		  }
     }
 }
