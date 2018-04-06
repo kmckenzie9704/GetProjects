@@ -1,5 +1,4 @@
 node {
-    stages {
 	    stage('Checkout') { 
 	         checkout scm 
 	     } 
@@ -19,5 +18,4 @@ node {
 		      sh "docker build -t GetProjects:latest  -t GetProject --pull --no-cache ."
 		    }
 		}
-    }
 }
