@@ -14,8 +14,6 @@ node {
         }
 
 		 stage('Create Docker Image') {
-		   steps {
 		      sh "docker build -t GetProjects:latest  -t GetProject --pull --no-cache ."
-		    }
 		}
 }
