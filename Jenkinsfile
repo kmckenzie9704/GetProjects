@@ -6,6 +6,9 @@ pipeline {
         }
     }
     stages {
+		stage('Initialize'){
+		    env.PATH = "/var/lib/docker/bin:${env.PATH}"
+		}
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package' 
