@@ -1,4 +1,4 @@
-pipeline {
+node {
     agent {
         docker {
             image 'maven:3-alpine' 
@@ -16,7 +16,7 @@ pipeline {
         }
 		 stage('Create Docker Image') {
 		   steps {
-		      sh  "docker build -t GetProjects ."
+		      sh "docker build -t GetProjects:latest  -t GetProject --pull --no-cache ."
 		    }
 		}
     }
