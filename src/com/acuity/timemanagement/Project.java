@@ -11,6 +11,7 @@ public class Project implements Serializable {
 	   private String projectName; 
 	   private String projectManager;  
 	   private int projectTotalHours;
+	   
 	   public Project(){} 
 	    
 	   public Project(String id, String name, String projectManager){  
