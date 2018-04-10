@@ -14,22 +14,8 @@ FROM maven:3.3.9-jdk-8
 #COPY src /opt/app/src
 #RUN mvn package
 
-#RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
-#	wget -qO- https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz.md5 | md5sum -c - && \
-#	tar zxf apache-tomcat-*.tar.gz && \
- #	rm apache-tomcat-*.tar.gz && \
- #	mv apache-tomcat* tomcat
-
-#ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
-#RUN mkdir /etc/service/tomcat
-#ADD run.sh /etc/service/tomcat/run
-#RUN chmod +x /*.sh
-#RUN chmod +x /etc/service/tomcat/run
-
-#CMD ["/sbin/my_init"]
-
 FROM jetty
-COPY target/*.war /var/lib/jetty/webapps/GetProjects.war
+COPY /var/lib/jenkins/workspace/GetProjects/target/TimeManagement-1.0.0.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
 
 # local application port
 EXPOSE 8080
