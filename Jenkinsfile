@@ -13,12 +13,13 @@ node {
                 sh "mvn -B -DskipTests clean package"
         }
 
-		 stage('Create Docker Image') {
-		      sh "docker build -t getprojects:latest  -t getprojects --pull --no-cache ."
-		}
-
 		 stage('Copy WAR Image') {
 		 		sh "ls -al"
 		      sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
 		}
+
+		 stage('Create Docker Image') {
+		      sh "docker build -t getprojects:latest  -t getprojects --pull --no-cache ."
+		}
+
 }
