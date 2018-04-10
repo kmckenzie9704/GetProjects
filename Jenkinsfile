@@ -19,6 +19,7 @@ node {
 
 		 stage('Copy WAR Image') {
 		 		sh "ls -al"
-		      sh "cp target/*.war /home/ken/Documents"
+		 		sh "whoami"
+		      sh "cp -f target/*.war /home/ken/Documents"
 		}
 }
