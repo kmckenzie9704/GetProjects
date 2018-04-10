@@ -19,7 +19,6 @@ node {
 
 		 stage('Copy WAR Image') {
 		 		sh "ls -al"
-		 		sh "sh chmod +x /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
 		      sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
 		}
 }
