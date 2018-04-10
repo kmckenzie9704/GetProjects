@@ -28,8 +28,8 @@ RUN mvn package
 
 #CMD ["/sbin/my_init"]
 
-FROM jetty
-ADD /opt/app/target/TimeManagement-1.0.0.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
+#FROM jetty
+#ADD /opt/app/target/TimeManagement-1.0.0.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
 
 # local application port
 EXPOSE 8080
