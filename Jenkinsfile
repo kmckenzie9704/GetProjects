@@ -15,6 +15,9 @@ node {
 
 		 stage('Create Docker Image') {
 		      sh "docker build -t getprojects:latest  -t getprojects --pull --no-cache ."
-		      sh "cp target/*.war ${dockerHome}/target/"
+		}
+
+		 stage('Copy WAR Image') {
+		      sh "docker build -t getprojects:latest  -t getprojects --pull --no-cache ."
 		}
 }
