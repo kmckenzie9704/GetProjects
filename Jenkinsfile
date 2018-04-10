@@ -18,6 +18,7 @@ node {
 		}
 
 		 stage('Copy WAR Image') {
-		      sh "cp target/*.war ${dockerHome}/home"
+		 		sh "ls -al"
+		      sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
 		}
 }
