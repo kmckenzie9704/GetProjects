@@ -15,7 +15,7 @@ FROM maven:3.3.9-jdk-8
 #RUN mvn package
 
 FROM jetty
-COPY target/TimeManagement-1.0.0.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
+COPY target/*.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
 
 # local application port
 EXPOSE 8080
