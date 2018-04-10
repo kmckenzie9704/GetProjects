@@ -2,17 +2,17 @@
 FROM maven:3.3.9-jdk-8
 
 # application placed into /opt/app
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
+#RUN mkdir -p /opt/app
+#WORKDIR /opt/app
 
 # selectively add the POM file and
 # install dependencies
-COPY pom.xml /opt/app/
-RUN mvn install
+#COPY pom.xml /opt/app/
+#RUN mvn install
 
 # rest of the project
-COPY src /opt/app/src
-RUN mvn package
+#COPY src /opt/app/src
+#RUN mvn package
 
 #RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
 #	wget -qO- https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz.md5 | md5sum -c - && \
@@ -29,7 +29,7 @@ RUN mvn package
 #CMD ["/sbin/my_init"]
 
 FROM jetty
-ADD target/TimeManagement-1.0.0.war /var/lib/jetty/webapps/TimeManagement-1.0.0.war
+ADD target/*.war /var/lib/jetty/webapps/GetProjects.war
 
 # local application port
 EXPOSE 8080
