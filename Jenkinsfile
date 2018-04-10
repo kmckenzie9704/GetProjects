@@ -18,6 +18,6 @@ node {
 		}
 
 		 stage('Copy WAR Image') {
-		      sh "cp target/*.war ${dockerHome}/target/"
+		      sh "cp target/*.war ${dockerHome}/home"
 		}
 }
