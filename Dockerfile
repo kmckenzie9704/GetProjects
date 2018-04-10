@@ -29,7 +29,7 @@ FROM maven:3.3.9-jdk-8
 #CMD ["/sbin/my_init"]
 
 FROM jetty
-ADD target/*.war /var/lib/jetty/webapps/GetProjects.war
+COPY target/*.war /var/lib/jetty/webapps/GetProjects.war
 
 # local application port
 EXPOSE 8080
