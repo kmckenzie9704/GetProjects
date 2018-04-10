@@ -19,6 +19,6 @@ node {
 
 		 stage('Copy WAR Image') {
 		 		sh "ls -al"
-		      sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
+		      sh "cp target/*.war /home/ken/Documents"
 		}
 }
