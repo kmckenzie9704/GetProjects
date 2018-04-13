@@ -14,7 +14,7 @@ public class ProjectDao {
 		Class.forName("com.mysql.jdbc.Driver");
 
 		Connection m_Connection = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/TimeTracking?autoReconnect=true&useSSL=false", "timaccess", "hgYT65^%");
+				"jdbc:mysql://192.168.56.101:3306/TimeTracking?autoReconnect=true&useSSL=false", "timaccess", "hgYT65^%");
 
 		Statement m_Statement = m_Connection.createStatement();
 		String query = "SELECT * FROM Projects";
