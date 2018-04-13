@@ -10,6 +10,7 @@ public class Project implements Serializable {
 	   private String projectId; 
 	   private String projectName; 
 	   private String projectManager;  
+	   private String projectCode;
 	   private int projectTotalHours;
 	   
 	   public Project(){} 
@@ -46,6 +47,15 @@ public class Project implements Serializable {
 	   public void setProjectManager(String strProjectManager) { 
 	      this.projectManager = strProjectManager; 
 	   }   
+
+	   public String getProjectCode() { 
+		      return projectCode; 
+		   } 
+		   
+		   @XmlElement 
+		   public void setProjectCode(String strProjectCode) {
+		      this.projectCode = strProjectCode; 
+		   }   
 
 	   public int getProjectTotalHours() { 
 		      return projectTotalHours; 

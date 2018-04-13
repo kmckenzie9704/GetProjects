@@ -11,10 +11,10 @@ public class ProjectDao {
 	Project prjCurrent = null;
 	try
 	{
-		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		Class.forName("com.mysql.jdbc.Driver");
 
 		Connection m_Connection = DriverManager.getConnection(
-				"jdbc:sqlserver://192.168.56.1\\SQLEXPRESS:1433;databaseName=TimeTracking;integratedSecurity=false", "timaccess", "hgyt65%^");
+				"jdbc:mysql://localhost:3306/TimeTracking?autoReconnect=true&useSSL=false", "timaccess", "hgYT65^%");
 
 		Statement m_Statement = m_Connection.createStatement();
 		String query = "SELECT * FROM Projects";
@@ -26,7 +26,8 @@ public class ProjectDao {
 			prjCurrent.setProjectId(m_ResultSet.getString(1));
 			prjCurrent.setProjectName( m_ResultSet.getString(2));
 			prjCurrent.setProjectManager( m_ResultSet.getString(3));
-			prjCurrent.setProjectTotalHours( m_ResultSet.getInt(4));
+			prjCurrent.setProjectCode(m_ResultSet.getString(4));
+			prjCurrent.setProjectTotalHours( m_ResultSet.getInt(5));
 			projectList.add(prjCurrent); 
 		}    
     } 
