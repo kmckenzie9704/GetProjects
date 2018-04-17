@@ -9,13 +9,8 @@ node {
 	        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}" 
 		}
 
-        stage('Test') {
-            sh 'make check || true'
-            junit '**/target/*.xml'
-        }
-
         stage('Build') { 
-                sh "mvn -B -DskipTests clean package"
+                sh "mvn -B -Dmaven.test.failure.ignore=true clean package"
         }
 
 		 stage('Copy WAR Image') {
