@@ -10,8 +10,8 @@ node {
 		}
 
         stage('Test') {
-            sh 'make check || true' 1
-            junit '**/target/*.xml' 2
+            sh 'make check || true'
+            junit '**/target/*.xml'
         }
 
         stage('Build') { 
