@@ -9,21 +9,14 @@ node {
 	        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}" 
 		}
 
-        stage('Build') { 
-        	steps {
-        
-                sh "mvn -B -Dmaven.test.failure.ignore=true clean package"
- 			}
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml'
-                }
-            }
+        stage('Build') {
+            sh "mvn -B -Dmaven.test.failure.ignore=true clean package"
+            junit 'target/surefire-reports/**/*.xml'
         }
 
 		 stage('Copy WAR Image') {
-		 		sh "ls -al"
-		      sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
+	 		sh "ls -al"
+			sh "cp target/*.war /home/ken/eclipse-workspace/TimeManagement/TimeManagement/target"
 		}
 
 		 stage('Create Docker Image') {
