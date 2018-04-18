@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import com.acuity.timemanagement.Project;
 import com.acuity.timemanagement.ProjectService;
 
-class GetProjectsTest {
+class ProjectServiceTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -25,7 +25,7 @@ class GetProjectsTest {
     MessageUtil messageUtil = new MessageUtil(message);
 
     @Test
-    public void GetProjectsTest() {	  
+    public void ProjectServiceTest() {	  
     	ProjectService prjService = new ProjectService();
     	List<Project> lstProject = prjService.getProjects();
     	assertNotNull(lstProject);
