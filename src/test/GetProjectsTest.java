@@ -25,7 +25,7 @@ class GetProjectsTest {
     MessageUtil messageUtil = new MessageUtil(message);
 
     @Test
-    public void testGetProjects() {	  
+    public void GetProjectsTest() {	  
     	ProjectService prjService = new ProjectService();
     	List<Project> lstProject = prjService.getProjects();
     	assertNotNull(lstProject);
