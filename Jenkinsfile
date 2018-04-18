@@ -11,7 +11,7 @@ node {
 
 
         stage('Build') {
-            sh "mvn -B -Dmaven.test.failure.ignore=true clean package"
+            sh "mvn -B -Dmaven.test.failure.ignore=true clean install"
         }
 
 		 stage('Copy WAR Image') {
