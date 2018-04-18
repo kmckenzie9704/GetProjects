@@ -1,4 +1,4 @@
-package com.acuity.timemanagement;
+package test;
 
 public class MessageUtil {
 	   private String message;
