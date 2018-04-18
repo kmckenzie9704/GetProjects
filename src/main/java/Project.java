@@ -1,4 +1,4 @@
-package com.acuity.timemanagement;
+package main.java;
 
 import java.io.Serializable;  
 import javax.xml.bind.annotation.XmlElement; 

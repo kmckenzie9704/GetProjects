@@ -1,4 +1,4 @@
-package com.acuity.timemanagement;
+package main.java;
 
 import java.util.List; 
 import javax.ws.rs.GET; 

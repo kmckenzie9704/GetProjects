@@ -8,8 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.acuity.timemanagement.Project;
-import com.acuity.timemanagement.ProjectService;
+import main.java.Project;
+import main.java.ProjectService;
 
 class ProjectServiceTest {
 
@@ -25,7 +25,7 @@ class ProjectServiceTest {
     MessageUtil messageUtil = new MessageUtil(message);
 
     @Test
-    public void ProjectServiceTest() {	  
+    public void getProjectsTest() {	  
     	ProjectService prjService = new ProjectService();
     	List<Project> lstProject = prjService.getProjects();
     	assertNotNull(lstProject);
