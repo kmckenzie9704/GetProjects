@@ -20,11 +20,13 @@
 	  <groupId>org.junit.jupiter</groupId>
 	  <artifactId>junit-jupiter-api</artifactId>
 	  <version>5.0.0</version>
+      <scope>test</scope>
 	</dependency>
   </dependencies>
   <build>
   	<defaultGoal>package</defaultGoal>
     <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
