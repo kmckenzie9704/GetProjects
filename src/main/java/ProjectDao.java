@@ -12,9 +12,27 @@ public class ProjectDao {
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
+		String strDBHost = System.getenv("ICE_GETPROJECTS_DB_HOST");
+		String strDBPort = System.getenv("ICE_GETPROJECTS_DB_PORT");
+		String strDBUser = System.getenv("ICE_GETPROJECTS_DB_USER");
+		String strDBPassword = System.getenv("ICE_GETPROJECTS_DB_PASSWORD");
+		String strDBTable = "TimeTracking";
+		String strConnStr = "";
+		
+    	StringBuilder sblConnectionString = new StringBuilder();
+    	sblConnectionString.append("jdbc:mysql://");
+    	sblConnectionString.append(strDBHost);
+    	sblConnectionString.append(":");
+    	sblConnectionString.append(strDBPort);
+    	sblConnectionString.append("/");
+    	sblConnectionString.append(strDBTable);
+    	sblConnectionString.append("?autoReconnect=true&useSSL=false");
+    	strConnStr = sblConnectionString.toString();
 
-		Connection m_Connection = DriverManager.getConnection(
-				"jdbc:mysql://192.168.56.101:3306/TimeTracking?autoReconnect=true&useSSL=false", "timaccess", "hgYT65^%");
+//		"jdbc:mysql://192.168.56.101:3306/TimeTracking?autoReconnect=true&useSSL=false", "timaccess", "hgYT65^%");
+
+		
+		Connection m_Connection = DriverManager.getConnection(strConnStr, strDBUser, strDBPassword);
 
 		Statement m_Statement = m_Connection.createStatement();
 		String query = "SELECT * FROM Projects";

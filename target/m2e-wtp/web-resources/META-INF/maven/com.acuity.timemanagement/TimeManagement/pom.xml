@@ -33,6 +33,11 @@
 	    <artifactId>metrics-healthchecks</artifactId>
 	    <version>3.0.1</version>
 	</dependency>
+	<dependency>
+	  <groupId>com.squareup.okhttp3</groupId>
+	  <artifactId>okhttp</artifactId>
+	  <version>3.10.0</version>
+	</dependency>
   </dependencies>
   <build>
   	<defaultGoal>package</defaultGoal>
