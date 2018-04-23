@@ -52,10 +52,10 @@ public class Project implements Serializable {
 		      return projectCode; 
 		   } 
 		   
-		   @XmlElement 
-		   public void setProjectCode(String strProjectCode) {
-		      this.projectCode = strProjectCode; 
-		   }   
+	   @XmlElement 
+	   public void setProjectCode(String strProjectCode) {
+	      this.projectCode = strProjectCode; 
+	   }   
 
 	   public int getProjectTotalHours() { 
 		      return projectTotalHours; 

@@ -9,6 +9,7 @@ public class ProjectDao {
 	public List<Project> getAllProjects() throws Exception { 		      
 	List<Project> projectList = new ArrayList<Project>(); 
 	Project prjCurrent = null;
+	
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");

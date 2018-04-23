@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 public class ProjectService {
 	   ProjectDao projectDao = new ProjectDao();  
+	   
 	   @GET 
 	   @Produces(MediaType.APPLICATION_JSON) 
 	   public List<Project> getProjects(){ 
